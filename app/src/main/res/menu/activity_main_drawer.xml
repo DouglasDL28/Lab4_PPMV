@@ -6,7 +6,7 @@
     <group
     >
         <item android:title="Inicio" android:id="@+id/nav_home"/>
-        <item android:title="Item" android:id="@+id/nav_proyects"/>
+        <item android:title="Proyectos" android:id="@+id/nav_proyects"/>
         <item android:title="Ubicación" android:id="@+id/nav_location"/>
     </group>
 

@@ -1,5 +1,6 @@
 package com.example.douglasdeleon.laboratorio4
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -17,11 +18,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
@@ -46,31 +42,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
-        }
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-//            R.id.nav_lab2 -> {
-//
-//            }
-//            R.id.nav_lab3 -> {
-//
-//            }
-//            R.id.nav_lab4 -> {
-//
-//            }
-//            R.id.nav_manage -> {
-//
-//            }
+            R.id.nav_home -> {
+
+            }
+            R.id.nav_proyects -> {
+                startActivity(Intent(this@MainActivity, ProyectsActivity::class.java))
+            } //Manda a la actividad del WebView.
+            R.id.nav_location -> {
+                startActivity(Intent(this@MainActivity, MapsActivity::class.java))
+            } //Manda a la actividad de Google Maps.
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

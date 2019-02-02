@@ -12,6 +12,6 @@ class WebviewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_webview)
 
         val myWebView: WebView = findViewById(R.id.webview)
-        myWebView.loadUrl(App.proyects[position])
+        myWebView.loadUrl(App.proyects[position]) //Muestra página según el proyecto que eligió.
     }
 }
